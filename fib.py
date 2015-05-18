@@ -1,7 +1,9 @@
 def fibonacci(n):
-    first, second = 0, 1
+    rv = []
+    first, second = 0, 1 # python makes it two lines shorter
     for i in range(n):
-        print first  # Print current iteration
-        first, second = second, first + second #Calculate next values
+        rv.append(first)
+        first, second = second, first + second 
+    return rv
  
-fibonacci(50)
+print fibonacci(10)

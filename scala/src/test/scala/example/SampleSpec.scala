@@ -29,7 +29,8 @@ class SampleSpec extends FlatSpec with BeforeAndAfterAll with MustMatchers {
     Console.println("B********************************************************************************")
     val optionalName: Option[String] = Some("Liz")
     val optionalAge: Option[Int] = Some(42)
-    val optionalLikesCarrots: Option[Boolean] = None
+    val optionalLikesCarrots: Option[Boolean] = Some(false)
+    val specialClause = false
 
     transaction {
       from(people)(p =>
