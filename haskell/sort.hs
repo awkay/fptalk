@@ -1,3 +1,4 @@
+-- Haskell is statically typed, but inference is very good...(next line is optional)
 quicksort :: (Ord a) => [a] -> [a]  
 quicksort [] = []  
 quicksort (x:xs) =   
