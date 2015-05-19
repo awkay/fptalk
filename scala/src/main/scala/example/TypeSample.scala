@@ -24,5 +24,5 @@ object TypeSample {
     Console.println("Yum " + item)
   }
 
-  eatFruit(basket) // turns out this one is easy to fix, but look at the source for List
+  //eatFruit(basket) // turns out this one is easy to fix, but look at the source for List
 }
