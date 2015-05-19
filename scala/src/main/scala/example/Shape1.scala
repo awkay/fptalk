@@ -21,14 +21,14 @@ object Geometry {
   def area2(c: Circle) = Math.PI * c.r * c.r
 
   // New shape with area support: Just write new code. Excellent!
-  case class Square(s: Double) extends Rect(s, s)
+  case class Square(s: Double) extends Shape
   def area2(s: Square) = s.s * s.s
 
   // But if I want to use polymorphism...
   var someShape: Shape = Circle(3.5)
 
-  // I'm screwed...compiler cannot resolve
-  area2(someShape)
+  // I'm stuck...compiler cannot resolve, nor can I write a general purpose function
+  //area2(someShape)
 }
 
 // OK, how about inheritance???

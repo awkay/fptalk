@@ -9,11 +9,6 @@ import org.squeryl.adapters.H2Adapter
 import org.squeryl.{Session, SessionFactory}
 
 class SampleSpec extends FlatSpec with BeforeAndAfterAll with MustMatchers {
-
-  override def beforeAll(): Unit = {
-    Setup()
-  }
-
   behavior of "Queries"
 
   it should "be able to query with a where clause" in {
@@ -41,6 +36,11 @@ class SampleSpec extends FlatSpec with BeforeAndAfterAll with MustMatchers {
           select p).headOption
     }
   }
+
+  override def beforeAll(): Unit = {
+    Setup()
+  }
+
 }
 
 object Setup {
