@@ -15,13 +15,16 @@
 
 ;; Extend the "area" functionality to support :Circle
 (defmethod area :Circle [c]
-    (* (. Math PI) (* (:radius c) (:radius c))))
+    (* (. Math PI) (:radius c) (:radius c)))
 
 (def r1 (rect 10 20))
-(def c1 (circle 100))
+(def c1 (circle 12))
 
 (area r1)
 (area c1)
 
 ; Some other (futute) file wants to extend supported shapes to include Squares:
-; (area {:Shape :Square :side 10})
+
+(defmethod area :Square [s] (* (:side s) (:side s)))
+
+(area {:Shape :Square :side 10})
