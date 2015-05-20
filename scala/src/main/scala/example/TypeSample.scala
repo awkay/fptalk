@@ -1,6 +1,7 @@
 package example
 
 object TypeSample {
+
   trait FoodContainer[T] {
     def firstItem: T
   }
@@ -10,19 +11,33 @@ object TypeSample {
   }
 
   trait Food
+
   trait Fruit extends Food
+
   case class Apple() extends Fruit
+
   case class Berry() extends Fruit
+
   case class Meat() extends Food
 
-  val basket = new Basket(Array( Apple(), Berry() ))
+  val basket = new Basket(Array(Apple(), Berry()))
 
   val item = basket.firstItem
 
-  def eatFruit(container : FoodContainer[Fruit]) = {
+  def eatFruit(container: FoodContainer[Fruit]) = {
     val item = container.firstItem
     Console.println("Yum " + item)
   }
 
   //eatFruit(basket) // turns out this one is easy to fix, but look at the source for List
+
+  // So the real question: How important is it to limit parameters at compile time???
+  def maybeEatFruit(container: FoodContainer) = {
+    val item = container.firstItem
+    item match {
+      case f: Fruit => Console.println("Yum " + f)
+      case _ =>
+    }
+  }
+  maybeEatFruit(basket)
 }

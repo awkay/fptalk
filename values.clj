@@ -15,7 +15,10 @@
 
 (group-by odd? someList)
 (group-by :market listOfMaps)
+(group-by odd? someSet)
 
+(partition 2 someList)
+(partition 2 someSet)
 (partition-by :market listOfMaps)
 
 ; "modification" of content
