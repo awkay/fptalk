@@ -8,21 +8,21 @@ class Area s where
   area :: s -> Double
 
 {- I can base a WHOLE library of functions on the concept of things that have area: -}
-totalArea :: (Area a) => [a] -> Double
+totalArea :: (Area a) => [a] -> Double 
 totalArea = foldl (+) 0 . map area 
 areaDiff :: (Area a, Area b) => a -> b -> Double
 areaDiff a b = (area a) - (area b)
 
-{- Of course I can create any new arbitrary data type at any time -}
+{- and create any new arbitrary data type at any time -}
 data Shape = Rectangle Double Double | Circle Double
 
-{- But I CAN "hook it" into the existing type class without needing to edit/compile (or even SEE) the prior two
+{- AND "hook it" into the existing type class (and library) without needing to edit/compile (or even SEE) the prior 
  - sections: -}
 instance Area Shape where
   area (Rectangle w h) = w * h
   area (Circle r) = 3.14 * r * r
 
-{- Add another data type... -}
+{- Then perhaps add another data type... -}
 data ExtendedShape = EquilateralTriangle Double
 
 {- and add support for "taking the area of" -}
