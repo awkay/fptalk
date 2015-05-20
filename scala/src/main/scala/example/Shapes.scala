@@ -3,20 +3,27 @@ package example
 // like a namespace
 object Geometry {
   // Attempt 1 ********************************************************************************
-  // Can define a general purpose function in one place...
   trait Shape
   case class Rect(w: Double, h: Double) extends Shape
   case class Circle(r: Double) extends Shape
+  // OK, I can add new cases at any time (e.g. Triangle)
 
+  def perimiter(s : Shape) = s match {
+    case Rect(w, h) => 2*w + 2*h
+    case Circle(r) => 2* Math.PI * r
+    case _ => throw new IllegalArgumentException("Unsupported Shape")
+  }
+
+  // OR new functionality can be added as well at any time
   def area(s: Shape) = s match {
     case Rect(w, h) => w * h
     case Circle(r) => Math.PI * r * r
-    // But extending it requires changing the source of this function
+    // But extending both to support new ones requires changing the source of the functions
     case _ => throw new IllegalArgumentException("Unsupported Shape")
   }
 
   // Attempt 2 ********************************************************************************
-  // I could try making a set of "global functions"
+  // I could try using overloading on arguments...
   def area2(r: Rect) = r.w * r.h
   def area2(c: Circle) = Math.PI * c.r * c.r
 
@@ -31,6 +38,7 @@ object Geometry {
   //area2(someShape)
 }
 
+// Attempt 3 ********************************************************************************
 // OK, how about inheritance???
 trait Shape2 {
   def area: Double
