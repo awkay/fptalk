@@ -1,4 +1,4 @@
-def someOp: Option[Int] = Some(4)
+def someOp: Option[Int] = Some(11)
 
 def nextOp(n: Int): Option[Int] =
   if (n < 10) Some(n + 1)

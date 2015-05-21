@@ -32,6 +32,7 @@ object TypeSample {
   //eatFruit(basket) // turns out this one is easy to fix, but look at the source for List
 
   // So the real question: How important is it to limit parameters at compile time???
+  /*
   def maybeEatFruit(container: FoodContainer) = {
     val item = container.firstItem
     item match {
@@ -40,4 +41,5 @@ object TypeSample {
     }
   }
   maybeEatFruit(basket)
+  */
 }

@@ -17,13 +17,13 @@ areaDiff a b = (area a) - (area b)
 data Shape = Rectangle Double Double | Circle Double
 
 {- AND "hook it" into the existing type class (and library) without needing to edit/compile (or even SEE) the prior 
- - sections: -}
+ - source: -}
 instance Area Shape where
   area (Rectangle w h) = w * h
   area (Circle r) = 3.14 * r * r
 
 {- Then perhaps add another data type... -}
-data ExtendedShape = EquilateralTriangle Double
+data ExtendedShape = EquilateralTriangle Double | Shape
 
 {- and add support for "taking the area of" -}
 instance Area ExtendedShape where

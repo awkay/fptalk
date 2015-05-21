@@ -1,4 +1,3 @@
--- Direct declarative approach to get the nth fibonacci number (performs very poorly, as it recalculates a LOT)
 fib 0 = 0
 fib 1 = 1
 fib n = fib (n-1) + fib (n-2)

@@ -1,4 +1,7 @@
-; In infix notation, overriding precedence gets ugly: 5 + (3 + ((11 + 4 + 5) * 20))  / 21
+; In infix notation, overriding precedence gets ugly:
+
+; 5 + (3 + ((11 + 4 + 5) * 20))  / 21
+
 ; It is "easy" in the sense that we are "used to it", but complex in that we have to follow rules of algebra to read it
 
 ; nested expressions in clojure are similarly painful by default (though simpler in terms of precedence always being explicit)
@@ -17,6 +20,38 @@
     (+ 3)       ; add 3 to "that"
     (/ 21)      ; divide "that" by 21
     (+ 5))      ; and add 5 to it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ; Macros are simple to write because (since code is data) they are simply data transforms, and all of the pre-existing
 ; data manipulation functions work!
