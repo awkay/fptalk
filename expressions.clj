@@ -22,37 +22,6 @@
     (+ 5))      ; and add 5 to it
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ; Macros are simple to write because (since code is data) they are simply data transforms, and all of the pre-existing
 ; data manipulation functions work!
 
